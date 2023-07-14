@@ -1,0 +1,52 @@
+<div class="login-container">
+  <mat-card class="card">
+    <mat-card-header class="materialHeader" r>
+      <h2>Sign Up</h2>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput formControlName="firstName" name="firstName" type="test"  />
+          <mat-error *ngIf="FirstName.touched && FirstName.invalid && FirstName.errors?.required ">FirstName Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput formControlName="lastName" name="lastName" type="test"  />
+          <mat-error *ngIf="LastName.touched && LastName.invalid && LastName.errors?.required ">LastName Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Date Of Birth</mat-label>
+          <input matInput formControlName="dob" name="dob" type="date"  />
+          <mat-error *ngIf="Dob.touched && Dob.invalid && Dob.errors?.required ">Date of Birth Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" name="email" type="email"  />
+          <mat-error *ngIf="Email.touched && Email.invalid && Email.errors?.required ">Email Required</mat-error>
+          <mat-error *ngIf="Email.touched && Email.invalid && Email.errors?.pattern ">Invalid Email</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Gender</mat-label>
+          <input matInput formControlName="gender" name="gender" type="text"  />
+          <mat-error *ngIf="Gender.touched && Gender.invalid && Gender.errors?.required ">Gender Required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" name="password"/>
+          <mat-error *ngIf="Password.touched && Password.invalid && Password.errors?.required ">Password Required</mat-error>
+          <mat-error *ngIf="Password.touched && Password.invalid && Password.errors?.minLength ">Password not Strong</mat-error>
+        </mat-form-field>
+
+        <div>
+          <p class="hrefLink" [routerLink]="['/']">Already a user? SignUp</p>
+        </div>
+        <div>
+          <button mat-raised-button color="primary">Sign Up</button>
+        </div>
+
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+</div>

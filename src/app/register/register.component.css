@@ -1,0 +1,30 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+
+}
+
+.errormsg{
+  width: 100%;
+
+}
+.card {
+  max-width: 400px;
+  border-color: cornflowerblue;
+  border-width: 2px;
+}
+.hrefLink{
+  color:cornflowerblue ;
+  text-decoration: underline;
+
+}
+.materialHeader{
+
+  text-align: center;
+  color: cornflowerblue;
+  align-items: center;
+
+}

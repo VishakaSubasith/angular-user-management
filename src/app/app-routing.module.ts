@@ -4,11 +4,12 @@ import {LoginComponent} from "./login/login.component";
 import {RegisterComponent} from "./register/register.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {UserComponent} from "./user/user.component";
+import {AuthenticationService} from "./services/authentication.guard"
 
 const routes: Routes = [
-  { path:'', component: DashboardComponent },
-  { path:'user', component: UserComponent },
-  { path:'signin', component: LoginComponent },
+  { path:'', component: LoginComponent },
+  { path:'user', component: UserComponent ,canActivate:[AuthenticationService]},
+  { path:'home', component: DashboardComponent ,canActivate:[AuthenticationService]},
   {path : 'signup',component: RegisterComponent}
 
 ];

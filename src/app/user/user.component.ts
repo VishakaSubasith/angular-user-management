@@ -1,9 +1,11 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, ViewChild} from '@angular/core';
 import {Observable, ReplaySubject} from "rxjs";
 import {UserService} from "../services/user.service";
 import { MatTableDataSource } from '@angular/material/table';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {PopupComponent} from "../popup/popup.component";
+import {MatPaginator} from "@angular/material/paginator";
+import {ToastrService} from "ngx-toastr";
 
 export interface userInterface {
   firstName: string;
@@ -15,22 +17,7 @@ export interface userInterface {
 }
 
 
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-//   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-//   {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-//   {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-//   {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-//   {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-//   {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-//   {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-//   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-//   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-// ];
-export interface DialogData {
-  animal: string;
-  name: string;
-}
+
 
 @Component({
   selector: 'app-user',
@@ -46,10 +33,10 @@ export class UserComponent {
   users:any
   dataSource:any
 
-  animal: any;
-  name: any;
+  @ViewChild(MatPaginator) pagination!: MatPaginator;
 
-  constructor(private userService:UserService,private dialog: MatDialog) {
+
+  constructor(private userService:UserService,private dialog: MatDialog,private toast:ToastrService) {
     this.getAllUsers()
   }
   //
@@ -80,14 +67,18 @@ export class UserComponent {
     this.userService.deleteUser(id).subscribe(result=>{
       console.log("result===>>",result)
       this.getAllUsers()
+      this.toast.success("Deleted Successfully")
     })
 
   }
   getAllUsers(){
     this.userService.getAllUsers().subscribe((data:any)=>{
       console.log("data",data)
-      this.users = data
+      this.users = data.sort((a:any, b:any) => {
+        return a.id - b.id;
+      })
       this.dataSource = new MatTableDataSource(data)
+      this.dataSource.paginator = this.pagination;
 
     })
   }

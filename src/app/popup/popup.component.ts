@@ -1,8 +1,8 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {DialogData, UserComponent} from "../user/user.component";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../services/user.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-popup',
@@ -18,7 +18,8 @@ export class PopupComponent {
     public dialog: MatDialog,
     public dialogRef: MatDialogRef<PopupComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private userService:UserService
+    private userService:UserService,
+    private toast:ToastrService
   ) {
 
     console.log("data====",data)
@@ -46,11 +47,15 @@ export class PopupComponent {
     if (this.form.valid) {
       if (this.data.isNewRecord)
         this.userService.getUserbyEmail(this.form.value.email).subscribe((res: any) => {
-          if (res.length > 0) console.log("Invalid email")
+          if (res.length > 0) {
+            console.log("Invalid email")
+            this.toast.error("Invalid email")
+          }
           else {
             this.userService.saveUsers(this.form.value).subscribe(() => {
               console.log("success")
               this.dialogRef.close();
+              this.toast.success("New User added Successfully")
               // this.toast.success("Registration Successfully")
             })
           }
@@ -61,7 +66,7 @@ export class PopupComponent {
             this.userService.updateUser(this.data.id, this.form.value).subscribe(() => {
               console.log("success")
               // this.dialogRef.close();
-              // this.toast.success("Registration Successfully")
+              this.toast.success(" User Updated Successfully")
             })
         })
     }

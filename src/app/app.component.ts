@@ -14,8 +14,12 @@ export class AppComponent {
   }
   ngDoCheck(){
     console.log("this.route.url===",this.route.url)
-    if(this.route.url === '/signin' || this.route.url==='/signip') this.menu = false
+    if(this.route.url === '/' || this.route.url==='/signup') this.menu = false
     else this.menu = true
+  }
+  onLogOut(){
+    sessionStorage.clear()
+    this.route.navigate(['/'])
   }
 
 }

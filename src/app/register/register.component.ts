@@ -47,11 +47,14 @@ export class RegisterComponent {
 
     if (this.form.valid)
       this.adminService.getUserbyEmail(this.form.value.email).subscribe((res:any)=>{
-        if (res.length>0) console.log("Invalid email")
+        if (res.length>0) {
+          console.log("Invalid email")
+          this.toast.success("User Already Exist")
+        }
         else{
           this.adminService.registerAdmin(this.form.value).subscribe(()=>{
             console.log("success")
-            this.router.navigate(['/signin'])
+            this.router.navigate(['/'])
             this.toast.success("Registration Successfully")
           })
         }

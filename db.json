@@ -13,8 +13,16 @@
       "lastName": "Subasith",
       "dob": "1998-03-09",
       "email": "subasith@gmail.com",
-      "password": "11111111111",
+      "password": "12345678",
       "id": 3
+    },
+    {
+      "firstName": "Vishaka",
+      "lastName": "Subasith",
+      "dob": "1998-03-09",
+      "email": "123@gmail.com",
+      "password": "11111111",
+      "id": 4
     }
   ],
   "user": [
@@ -43,10 +51,16 @@
       "id": 4
     },
     {
-      "firstName": "111111",
+      "firstName": "Vishakatt",
       "lastName": "Subasith",
-      "email": "subawwwwwsith@gmail.com",
-      "id": 5
+      "email": "subasiyyyth@gmail.com",
+      "id": 6
+    },
+    {
+      "firstName": "Vishaka",
+      "lastName": "Subasith",
+      "email": "sub1111asith@gmail.com",
+      "id": 7
     }
   ]
 }

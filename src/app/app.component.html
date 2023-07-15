@@ -5,6 +5,6 @@
   <span class="name-spacer">Cloud Solutions</span>
   <button mat-button [routerLink]="['user']" class="user-space">users</button>
   <span class="logout-spacer"></span>
-  <button mat-raised-button color="warn" [routerLink]="['signin']">Logout</button>
+  <button mat-raised-button color="warn" (click)="onLogOut()" >Logout</button>
 </mat-toolbar>
 <router-outlet></router-outlet>

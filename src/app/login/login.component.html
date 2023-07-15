@@ -4,7 +4,7 @@
       <h2>Login</h2>
     </mat-card-header>
     <mat-card-content>
-      <form [formGroup]="form">
+      <form [formGroup]="form" (click)="onLogin()" )>
         <mat-form-field>
           <mat-label>Email</mat-label>
           <input matInput formControlName="email" name="email" type="email"  />

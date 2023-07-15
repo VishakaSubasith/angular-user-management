@@ -20,6 +20,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {HttpClientModule} from "@angular/common/http";
+import {ToastrModule} from "ngx-toastr";
+
 
 
 @NgModule({
@@ -46,6 +49,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatToolbarModule,
     NoopAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot()
 
 
   ],

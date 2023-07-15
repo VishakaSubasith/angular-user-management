@@ -21,10 +21,12 @@ export class PopupComponent {
     private userService:UserService
   ) {
 
+    console.log("data====",data)
+
     this.form = new FormGroup({
-      firstName: new FormControl('',[Validators.required]),
-      lastName: new FormControl('',[Validators.required]),
-      email: new FormControl('', [Validators.required,Validators.pattern(this.emailReg)]),
+      firstName: new FormControl(data.firstName,[Validators.required]),
+      lastName: new FormControl(data.lastName,[Validators.required]),
+      email: new FormControl(data.email, [Validators.required,Validators.pattern(this.emailReg)]),
     })
   }
 
@@ -40,17 +42,30 @@ export class PopupComponent {
   }
   onSubmit(){
 
-    if (this.form.valid)
-      this.userService.getUserbyEmail(this.form.value.email).subscribe((res:any)=>{
-        if (res.length>0) console.log("Invalid email")
-        else{
-          this.userService.saveUsers(this.form.value).subscribe(()=>{
-            console.log("success")
-            this.dialogRef.close();
-            // this.toast.success("Registration Successfully")
-          })
-        }
-      })
+    console.log("this.form===",this.form)
+    if (this.form.valid) {
+      if (this.data.isNewRecord)
+        this.userService.getUserbyEmail(this.form.value.email).subscribe((res: any) => {
+          if (res.length > 0) console.log("Invalid email")
+          else {
+            this.userService.saveUsers(this.form.value).subscribe(() => {
+              console.log("success")
+              this.dialogRef.close();
+              // this.toast.success("Registration Successfully")
+            })
+          }
+        })
+      else
+        this.userService.getUserbyEmail(this.form.value.email).subscribe((res: any) => {
+          if (res.length === 1)
+            this.userService.updateUser(this.data.id, this.form.value).subscribe(() => {
+              console.log("success")
+              // this.dialogRef.close();
+              // this.toast.success("Registration Successfully")
+            })
+        })
+    }
+
 
 
   }

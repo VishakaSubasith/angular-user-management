@@ -21,4 +21,9 @@ export class UserService {
   deleteUser(id: number) {
     return this.httpClient.delete(baseURL + 'user/' + id);
   }
+  updateUser(id: number, data: any) {
+    console.log("id===,",id)
+    console.log("data===,",data)
+    return this.httpClient.put(baseURL + 'user/' + id, data);
+  }
 }

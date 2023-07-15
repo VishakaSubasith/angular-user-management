@@ -57,9 +57,18 @@ export class UserComponent {
   //
   // dataSource = new ExampleDataSource(this.dataToDisplay);
 
-  openDialog(isNewRecord:any): void {
+  addUser(){
+
+    this.openDialog(true,null,null,null,null)
+
+  }
+  updateUser(id:number,firstName:string,lastName:string, email:string){
+    this.openDialog(false,id,firstName,lastName,email)
+  }
+
+  openDialog(isNewRecord:boolean, id:number | null, firstName:string | null,lastName:string| null, email:string | null): void {
     const dialogRef = this.dialog.open(PopupComponent, {
-      data: {name: this.name, animal: this.animal, isNewRecord},
+      data: { id,firstName, lastName,email, isNewRecord},
     });
 
     dialogRef.afterClosed().subscribe((result:any) => {

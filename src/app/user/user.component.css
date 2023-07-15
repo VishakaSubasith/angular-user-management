@@ -1,11 +1,20 @@
 .demo-table {
-  width: 100%;
+  width: 50%;
+  margin: 50px ;
+  max-width: 50%;
 }
 
 .demo-button-container {
   padding-bottom: 16px;
 }
+.mdc-data-table__table{
+  min-width: 95%;
+}
 
-.demo-button + .demo-button {
+.add-add-button {
   margin-left: 8px;
 }
+.demo-button-container {
+  padding: 15px;
+}
+

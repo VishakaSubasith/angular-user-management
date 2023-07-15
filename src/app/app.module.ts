@@ -18,10 +18,13 @@ import {MatRadioModule} from "@angular/material/radio";
 import {MatIconModule} from "@angular/material/icon";
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
+import { UserComponent } from './user/user.component';
+import {MatListModule} from "@angular/material/list";
+import { PopupComponent } from './popup/popup.component';
 
 
 
@@ -30,7 +33,9 @@ import {ToastrModule} from "ngx-toastr";
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserComponent,
+    PopupComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,9 @@ import {ToastrModule} from "ngx-toastr";
     NoopAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatListModule,
+    FormsModule
 
 
   ],

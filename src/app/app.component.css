@@ -1,0 +1,14 @@
+
+.logout-spacer {
+  flex: 1 1 auto;
+}
+.user-space{
+  margin-left: 5%;
+  color: cornflowerblue;
+  font-size: medium;
+}
+
+.menu, .name-spacer{
+  color: cornflowerblue;
+}
+

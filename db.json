@@ -4,15 +4,6 @@
       "firstName": "Vishaka",
       "lastName": "Subasith",
       "dob": "1998-03-09",
-      "email": "subasith@gmail.com",
-      "gender": "male",
-      "password": "Vishaka@123",
-      "id": 1
-    },
-    {
-      "firstName": "Vishaka",
-      "lastName": "Subasith",
-      "dob": "1998-03-09",
       "email": "venus.ad2021@gmail.com",
       "password": "12dfffffffffffff",
       "id": 2
@@ -22,8 +13,34 @@
       "lastName": "Subasith",
       "dob": "1998-03-09",
       "email": "subasith@gmail.com",
-      "password": "11111111",
+      "password": "11111111111",
       "id": 3
+    }
+  ],
+  "user": [
+    {
+      "firstName": "Vishaka",
+      "lastName": "Subasith",
+      "email": "subasith@gmail.com",
+      "id": 3
+    },
+    {
+      "firstName": "Vishaka",
+      "lastName": "Subasith",
+      "email": "subasith@gmail.com",
+      "id": 1
+    },
+    {
+      "firstName": "Vishaka",
+      "lastName": "Subasith",
+      "email": "subasith@gmail.com",
+      "id": 2
+    },
+    {
+      "firstName": "Vishaka",
+      "lastName": "Subasith",
+      "email": "subasith@gmail.com",
+      "id": 4
     }
   ]
 }

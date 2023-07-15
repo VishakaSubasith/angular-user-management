@@ -39,6 +39,15 @@ export class LoginComponent implements OnInit{
     }
     onLogin(){
 
+      if (this.form.valid){
+        this.adminService.getUserbyEmail(this.form.value.email).subscribe((value:any)=>{
+          console.log("Value===>>>",value)
+          if (this.form.value.password=== value[0]?.password){
+            this.router.navigate(['/'])
+          }
+        })
+      }
+
 
 
     }

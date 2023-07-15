@@ -15,7 +15,7 @@ export class AdminService {
     return this.httpClient.post(baseURL + 'admin/', data);
   }
   getUserbyEmail(email: string) {
-    return this.httpClient.get(baseURL + 'admin/' + email);
+    return this.httpClient.get(baseURL + 'admin?email=' + email);
   }
 
 }

@@ -25,6 +25,7 @@ import {ToastrModule} from "ngx-toastr";
 import { UserComponent } from './user/user.component';
 import {MatListModule} from "@angular/material/list";
 import { PopupComponent } from './components/popup/popup.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 
@@ -58,7 +59,8 @@ import { PopupComponent } from './components/popup/popup.component';
     HttpClientModule,
     ToastrModule.forRoot(),
     MatListModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule
 
 
   ],

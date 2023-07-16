@@ -1,7 +1,7 @@
 import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {UserService} from "../services/user.service";
+import {UserService} from "../../services/user.service";
 import {ToastrService} from "ngx-toastr";
 
 @Component({
@@ -62,12 +62,14 @@ export class PopupComponent {
         })
       else
         this.userService.getUserbyEmail(this.form.value.email).subscribe((res: any) => {
-          if (res.length === 1)
+          console.log("rrrr==>>",res)
+          if (res.length === 0)
             this.userService.updateUser(this.data.id, this.form.value).subscribe(() => {
               console.log("success")
-              // this.dialogRef.close();
+              this.dialogRef.close();
               this.toast.success(" User Updated Successfully")
             })
+          else this.toast.error("Invalid email")
         })
     }
 

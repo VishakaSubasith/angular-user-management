@@ -3,7 +3,7 @@ import {Observable, ReplaySubject} from "rxjs";
 import {UserService} from "../services/user.service";
 import { MatTableDataSource } from '@angular/material/table';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
-import {PopupComponent} from "../popup/popup.component";
+import {PopupComponent} from "../components/popup/popup.component";
 import {MatPaginator} from "@angular/material/paginator";
 import {ToastrService} from "ngx-toastr";
 

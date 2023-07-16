@@ -24,7 +24,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {ToastrModule} from "ngx-toastr";
 import { UserComponent } from './user/user.component';
 import {MatListModule} from "@angular/material/list";
-import { PopupComponent } from './popup/popup.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 
 

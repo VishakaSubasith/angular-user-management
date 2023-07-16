@@ -12,8 +12,13 @@ export class UserService {
   saveUsers(data:any){
     return this.httpClient.post(baseURL + 'user/', data);
   }
-  getAllUsers(){
-    return this.httpClient.get(`${baseURL}user`);
+  getAllUsers(offset:number = 0,limit:number=0){
+
+    let users = this.httpClient.get(`${baseURL}user`);
+    // const size = limit || users?.length
+    // const from = offset * size;
+    console.log("users.====>>>",users)
+    return users;
   }
   getUserbyEmail(email: string) {
     return this.httpClient.get(baseURL + 'user?email=' + email);

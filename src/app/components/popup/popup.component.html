@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>{{data.isNewRecord? "Add new User" : "Update the User"}}</h1>
 <div mat-dialog-content>
-  <form [formGroup]="form" (click)="onSubmit()" >
+  <form [formGroup]="form" >
     <mat-form-field>
       <mat-label>First Name</mat-label>
       <input matInput formControlName="firstName" name="firstName" type="test"  />
@@ -19,12 +19,11 @@
       <mat-error *ngIf="Email.touched && Email.invalid && Email.errors?.pattern ">Invalid Email</mat-error>
     </mat-form-field>
 
-    <div>
-      <button mat-raised-button color="primary" style="margin-right: 15px">{{data.isNewRecord? "Save" : "Update"}}</button>
-      <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
-    </div>
-
   </form>
+  <div>
+    <button mat-raised-button color="primary" (click)="onSubmit()" style="margin-right: 15px">{{data.isNewRecord? "Save" : "Update"}}</button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+  </div>
 </div>
 <!--<div mat-dialog-actions>-->
 <!--  <button mat-button (click)="onNoClick()">No Thanks</button>-->

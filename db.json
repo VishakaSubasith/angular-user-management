@@ -27,9 +27,9 @@
   ],
   "user": [
     {
-      "firstName": "Vishaka",
-      "lastName": "Subasith",
-      "email": "subasith@gmail.com",
+      "firstName": "Vishaka111",
+      "lastName": "Subasith111",
+      "email": "subasith111@gmail.com",
       "id": 3
     },
     {
@@ -45,22 +45,10 @@
       "id": 2
     },
     {
-      "firstName": "erasha",
-      "lastName": "Nethmi",
-      "email": "subasi1th@gmail.com",
+      "firstName": "Vishaka222",
+      "lastName": "Subasith222",
+      "email": "subasith222@gmail.com",
       "id": 4
-    },
-    {
-      "firstName": "Vishakatt",
-      "lastName": "Subasith",
-      "email": "subasiyyyth@gmail.com",
-      "id": 6
-    },
-    {
-      "firstName": "Vishaka",
-      "lastName": "Subasith",
-      "email": "sub1111asith@gmail.com",
-      "id": 7
     }
   ]
 }

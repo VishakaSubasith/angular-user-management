@@ -27,28 +27,34 @@
   ],
   "user": [
     {
-      "firstName": "Vishaka111",
-      "lastName": "Subasith111",
-      "email": "subasith111@gmail.com",
-      "id": 3
-    },
-    {
-      "firstName": "Vishaka",
-      "lastName": "Subasith",
-      "email": "subasith@gmail.com",
-      "id": 1
-    },
-    {
-      "firstName": "Vishaka",
-      "lastName": "Subasith",
-      "email": "subasith@gmail.com",
+      "firstName": "Subasith ",
+      "lastName": "Ranjith",
+      "email": "vishakatest1@gmail.com",
       "id": 2
     },
     {
-      "firstName": "Vishaka222",
-      "lastName": "Subasith222",
-      "email": "subasith222@gmail.com",
+      "firstName": "nimal",
+      "lastName": "kamal",
+      "email": "vishakatest2@gmail.com",
+      "id": 3
+    },
+    {
+      "firstName": "saman",
+      "lastName": "kamal",
+      "email": "vishaka.subasith@1billiontech.com",
       "id": 4
+    },
+    {
+      "firstName": "anura",
+      "lastName": "nimal",
+      "email": "vishaka98@icloud.com",
+      "id": 5
+    },
+    {
+      "firstName": "Vishaka",
+      "lastName": "Subasith",
+      "email": "subasith@gmail.com",
+      "id": 6
     }
   ]
 }
